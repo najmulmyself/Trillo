@@ -1,0 +1,25 @@
+.container {
+  max-width: 120rem;
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-dark);
+  margin: 8rem auto;
+
+  min-height: 50rem;
+}
+
+.header {
+  height: 8rem;
+  background-color: white;
+  border-bottom: var(--color-grey-light-2);
+}
+.content {
+    display:flex;
+}
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+    flex: 0 0 18%; //flex : flex-grow flex-srink flex-basis;
+}
+.hotel-view {
+    background-color: orange;
+    flex: 1; // it will contain rest of the width which is 82%;
+}
