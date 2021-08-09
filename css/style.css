@@ -36,6 +36,47 @@ body {
   min-height: 100vh;
   background-size: cover; }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.logo {
+  height: 3.25rem; }
+
+input:focus {
+  outline: none; }
+
+.search-input {
+  border: none;
+  background-color: var(--color-grey-light-4);
+  border-radius: 3rem;
+  padding: 1rem 0;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  position: absolute; }
+
+.search-button {
+  position: relative;
+  top: 0.7rem;
+  right: -33rem;
+  border: none;
+  color: var(--color-grey-light-4);
+  background: transparent; }
+
+.search-icon {
+  height: 2rem;
+  width: 2rem; }
+
+.user-nav {
+  display: flex; }
+  .user-nav_icon {
+    height: 2.5rem;
+    width: 2.5rem; }
+  .user-nav_user-photo {
+    height: 3.75rem;
+    border-radius: 50%; }
+
 .container {
   max-width: 120rem;
   background-color: var(--color-grey-light-1);
