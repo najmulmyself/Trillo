@@ -1,43 +1,63 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 ////////////////////////////////////////////////
 //LOGO
 
 .logo {
   height: 3.25rem;
+  margin-left: 3rem;
 }
 
 ////////////////////////////////////////////////
 //SEARCH
-input:focus{
-    outline: none;
-}
 .search {
-  &-input {
-    border: none;
-    background-color: var(--color-grey-light-4);
-    border-radius: 3rem;
-    padding: 1rem 0;
-    padding-left: 10rem;
-    padding-right: 10rem;
-    position: absolute;
+  flex: 0 0 40%;
 
-   
+  display: flex; // this makes an items as a container
+  justify-content: center;
+  align-items: center;
+
+  &-input {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    background-color: var(--color-grey-light-2);
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all 0.2s;
+    margin-right: -3rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light-3);
+    }
+
+    &:--webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-light-4);
+    }
+  }
+
+  &-input:focus + &-button {
+    background-color: var(--color-grey-light-3);
   }
   &-button {
-    position: relative;
-    top: 0.7rem;
-    right: -33rem;
     border: none;
-    color: var(--color-grey-light-4);
-    background: transparent;
+    background-color: var(--color-grey-light-2);
+
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      transform: translateY(2px);
+    }
   }
   &-icon {
     height: 2rem;
     width: 2rem;
+
+    fill: var(--color-grey-dark-3);
   }
 }
 
