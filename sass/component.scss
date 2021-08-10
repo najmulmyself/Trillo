@@ -65,20 +65,63 @@
 //USER NAVIGATION
 .user-nav {
   display: flex;
+  align-items: center;
+
+  align-self: stretch; // just to be aligned self
+
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    // if we set height to 100% problem arise is that all the icon placed to top
+    // if we want to fix this need to set the icon box as a flex
+  }
+
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
+
   &_icon-box {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    // margin: 0 0.75rem;
+    // padding: 0 0.5rem;
+    position: relative;
   }
   &_icon {
     height: 2.5rem;
     width: 2.5rem;
+
+    fill: var(--color-grey-dark-3);
   }
   &_notification {
+    font-size: 0.8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    position: absolute;
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 100px;
+    top: 1.7rem;
+    right: 1rem;
+
+    //text center
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    padding: 0 1rem;
   }
   &_user-photo {
     height: 3.75rem;
     border-radius: 50%;
-  }
-  &_user-name {
+    margin-right: 1rem;
   }
 }
