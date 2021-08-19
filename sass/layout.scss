@@ -18,13 +18,19 @@
   align-items: center;
 }
 .content {
-    display:flex;
+  display: flex;
 }
 .sidebar {
-    background-color: var(--color-grey-dark-1);
-    flex: 0 0 18%; //flex : flex-grow flex-srink flex-basis;
+  background-color: var(--color-grey-dark-1);
+  flex: 0 0 18%; //flex : flex-grow flex-srink flex-basis;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .hotel-view {
-    background-color: orange;
-    flex: 1; // it will contain rest of the width which is 82%;
+  // test
+  height: 80rem;
+  background-color: orange;
+  flex: 1; // it will contain rest of the width which is 82%;
 }
