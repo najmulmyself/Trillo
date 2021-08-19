@@ -130,15 +130,28 @@
 //SIDE NAVIGATION
 
 .side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem;
   &_item {
   }
 
-  &_link {
+  &_link:link,
+  &_link:visited {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-grey-light-1);
+    // display: block;
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
   }
 
   &_icon {
-    width : 1.75rem;
+    width: 1.75rem;
     height: 1.75rem;
+    margin-right: 2rem;
+    fill: currentColor; // this will fill the color with parant color | which is var(--color-grey-light-1)
   }
 }
 
@@ -151,5 +164,4 @@
   text-align: center;
   padding: 2.5rem;
   text-decoration: none;
-
 }
