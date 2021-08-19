@@ -123,13 +123,34 @@ body {
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem; }
+  .side-nav_item {
+    position: relative; }
+    .side-nav_item:not(:last-child) {
+      margin-bottom: 0.5rem; }
+  .side-nav_item::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: all 0.2s, width 0.4s 0.2s , background-color 0.2s; }
+  .side-nav_item:hover::before, .side-nav_item--active::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav_item:active::before {
+    background-color: var(--color-primary-light); }
   .side-nav_link:link, .side-nav_link:visited {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: var(--color-grey-light-1);
     text-transform: uppercase;
-    padding: 1.5rem 3rem; }
+    padding: 1.5rem 3rem;
+    position: relative;
+    z-index: 10; }
   .side-nav_icon {
     width: 1.75rem;
     height: 1.75rem;

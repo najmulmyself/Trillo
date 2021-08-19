@@ -134,8 +134,41 @@
   list-style: none;
   margin-top: 3.5rem;
   &_item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+  &_item::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--color-primary);
+    transform: scaleY(0); // this will initially hide
+    transition: all 0.2s, width 0.4s 0.2s , background-color 0.2s; // this simply say width coverd within 0.4s and the delay 0.2s
+
+    // heres another problem aries. when before psuedo element seted the text goes down and animation comes top
+    // to prevent this problem need to use z index and z index only works if we have a specific position
+    // these following code need to set on link:visited area
+
+    // position: relative;
+    // z-index: 10;
   }
 
+  &_item:hover::before,
+  &_item--active::before {
+    // active will be same as these code
+
+    transform: scaleY(1); // when hover the before state will scale 1
+    width: 100%;
+  }
+  &_item:active::before {
+    background-color: var(--color-primary-light);
+  }
   &_link:link,
   &_link:visited {
     display: flex;
@@ -145,6 +178,14 @@
     // display: block;
     text-transform: uppercase;
     padding: 1.5rem 3rem;
+
+    // code probelm discribed on the top
+    // heres another problem aries. when before psuedo element seted the text goes down and animation comes top
+    // to prevent this problem need to use z index and z index only works if we have a specific position
+    // these following code need to set on link:visited area
+
+    position: relative;
+    z-index: 10;
   }
 
   &_icon {
