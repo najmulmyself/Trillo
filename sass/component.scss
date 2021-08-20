@@ -149,7 +149,7 @@
     height: 100%;
     background-color: var(--color-primary);
     transform: scaleY(0); // this will initially hide
-    transition: all 0.2s, width 0.4s 0.2s , background-color 0.2s; // this simply say width coverd within 0.4s and the delay 0.2s
+    transition: all 0.2s, width 0.4s 0.2s, background-color 0.2s; // this simply say width coverd within 0.4s and the delay 0.2s
 
     // heres another problem aries. when before psuedo element seted the text goes down and animation comes top
     // to prevent this problem need to use z index and z index only works if we have a specific position
@@ -205,4 +205,45 @@
   text-align: center;
   padding: 2.5rem;
   text-decoration: none;
+}
+
+////////////////////////////////////////////////
+//GALLERY
+
+.gallery {
+  display: flex;
+  &-photo {
+    width: 100%;
+  }
+}
+
+////////////////////////////////////////////////
+//HOTEL OVERVIEW
+
+.overview {
+  display: flex;
+  &-heading {
+  }
+  &-stars {
+    margin-right: auto; // that does is this mainly it spaces all the available space to the right
+  }
+  &-icon_star {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &-location {
+    &_icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: var(--color-primary);
+    }
+  }
+  &-rating {
+    &_count {
+    }
+    &_avarage {
+    }
+  }
 }
