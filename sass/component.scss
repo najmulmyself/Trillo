@@ -317,3 +317,87 @@
     box-shadow: none;
   }
 }
+
+///////////////////////////////////////////
+/////PARAGRAPH
+
+.paragraph:not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+///////////////////////////////////////////
+/////LIST
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-grey-light-2);
+  border-bottom: 1px solid var(--color-grey-light-2);
+  display: flex;
+  flex-wrap: wrap;
+
+  &-item {
+    display: inline-block;
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+  }
+
+  &-item::before {
+    content: " ";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+
+    // these following code for older browsers
+    //it has a problem of changing the background color of the svg icon | we can't change this
+
+    // background-image:url(../img/chevron-thin-right.svg);
+    // background-size: cover;
+
+    // these following code for newer browsers
+    // we can solve this by doing with mask
+
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.);
+    mask-size: cover;
+  }
+}
+
+///////////////////////////////////////////
+/////RECOMMEND
+
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+
+  display: flex;
+  align-items: center;
+  &-count {
+    margin-right: auto;
+  }
+
+  &-friends {
+  }
+
+  &-photo {
+    cursor: pointer;
+    box-sizing: content-box; // includes all the height width value
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
+  }
+}
