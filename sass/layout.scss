@@ -5,6 +5,12 @@
   margin: 8rem auto;
 
   min-height: 50rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0; // we dont want color-primary margin ;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .header {
@@ -19,6 +25,12 @@
 }
 .content {
   display: flex;
+
+  // we want the sidebar to position vertically when bp is 900px;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  };
 }
 .sidebar {
   background-color: var(--color-grey-dark-1);
@@ -39,6 +51,10 @@
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: 1px solid var(--color-grey-light-2);
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+  };
 }
 .description {
   background-color: #fff;
@@ -46,6 +62,11 @@
   padding: 3rem;
   flex: 0 0 60%;
   margin-right: 4.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  };
 }
 ::selection {
   background-color: var(--color-primary);
