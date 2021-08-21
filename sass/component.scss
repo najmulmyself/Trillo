@@ -135,9 +135,9 @@
   margin-top: 3.5rem;
 
   @media only screen and (max-width: $bp-medium) {
-    display : flex;
+    display: flex;
     margin: 0;
-  };
+  }
   &_item {
     position: relative;
 
@@ -146,11 +146,11 @@
 
       @media only screen and (max-width: $bp-medium) {
         margin: 0;
-      };
+      }
     }
     @media only screen and (max-width: $bp-medium) {
-      flex : 1;
-    };
+      flex: 1;
+    }
   }
   &_item::before {
     content: " ";
@@ -199,10 +199,13 @@
     position: relative;
     z-index: 10;
 
-
     @media only screen and (max-width: $bp-medium) {
       justify-content: center;
-    };
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+    }
   }
 
   &_icon {
@@ -210,6 +213,10 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; // this will fill the color with parant color | which is var(--color-grey-light-1)
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+    }
   }
 }
 
@@ -223,7 +230,7 @@
   padding: 2.5rem;
   text-decoration: none;
 
-  @media only screen and (max-width: $bp-medium){
+  @media only screen and (max-width: $bp-medium) {
     display: none;
   }
 }
@@ -252,6 +259,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
   &-stars {
     margin-right: auto; // that does is this mainly it spaces all the available space to the right
@@ -287,13 +299,23 @@
     align-self: stretch; // for stretching the self item;
     padding: 0 2.25rem;
 
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
     &_count {
       font-size: 0.8rem;
       text-transform: uppercase;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size:0.8rem;
+      }
     }
     &_avarage {
       font-size: 2.25rem;
       font-weight: 300;
+      @media only screen and (max-width: $bp-small) {
+        font-size:1.5rem;
+      }
     }
   }
 }
@@ -411,7 +433,7 @@
   }
 
   &-friends {
-    display : flex;
+    display: flex;
   }
 
   &-photo {
@@ -447,7 +469,7 @@
   @media only screen and (max-width: $bp-medium) {
     padding: 2rem;
     margin-bottom: 3rem;
-  };
+  }
 
   &-text {
     margin-bottom: 3rem;
@@ -504,27 +526,34 @@
 
   @media only screen and (max-width: $bp-medium) {
     padding: 2.5rem 0;
-  };
+  }
 
-  &-text{
+  &-text {
     font-size: 1.5rem;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
-
   }
-  &-btn{
-    background: linear-gradient(to right , var(--color-primary-dark), var(--color-primary-light));
+  &-btn {
+    background: linear-gradient(
+      to right,
+      var(--color-primary-dark),
+      var(--color-primary-light)
+    );
     border: none;
     padding: 1.5rem 4rem;
     border-radius: 4rem;
     color: #fff;
     cursor: pointer;
     transition: all 0.2s;
-    span{
+    span {
       text-transform: uppercase;
     }
-    &:hover{
-      background : linear-gradient(to right , var(--color-primary-light), var(--color-primary-dark));
+    &:hover {
+      background: linear-gradient(
+        to right,
+        var(--color-primary-light),
+        var(--color-primary-dark)
+      );
       transform: scale(1.05);
     }
   }
